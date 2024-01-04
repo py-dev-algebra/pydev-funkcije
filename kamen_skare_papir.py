@@ -9,8 +9,13 @@ bodovi_korisnik = 0
 bodovi_racunalo = 0
 
 
-def menu(user_points: int, computer_points: int, broj_partija: int):
+def menu(user_points: int, computer_points: int, broj_partija: int) -> None:
+    # if os.name == 'nt':
+    #     os.system('cls')
+    # else:
+    #     os.system('clear')
     os.system('cls' if os.name == 'nt' else 'clear')
+
     print()
     print(f'Korisnik: {user_points}\t:\tRacunalo: {computer_points}')
     print(f'Partija: {broj_partija}')
@@ -24,7 +29,7 @@ def menu(user_points: int, computer_points: int, broj_partija: int):
     print()
 
 
-def status_igre(user_choice, computer_choice):
+def status_igre(user_choice: int, computer_choice: int) -> None:
     global broj_partija
     global bodovi_korisnik
     global bodovi_racunalo
@@ -57,29 +62,6 @@ def status_igre(user_choice, computer_choice):
         broj_partija += 1
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # GLAVNI PROGRAM - MAIN
 while broj_partija < 3:
     menu(bodovi_korisnik, bodovi_racunalo, broj_partija)
@@ -95,7 +77,7 @@ while broj_partija < 3:
 
 
     # PROVJERA POBJEDNIKA PARTIJE
-    status_igre(user_choice=izbor_racunala, 
+    status_igre(user_choice=izbor_korisnika, 
                 computer_choice=izbor_racunala)
 
 

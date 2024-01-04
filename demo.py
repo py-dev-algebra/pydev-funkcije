@@ -1,18 +1,25 @@
-def display_user(first_name, last_name):
-    print(f'Ime: {first_name}\tPrezime: {last_name}')
-
-
-
-
-
-
-
-
-
-
-
 ime = 'Pero'
 prezime = 'Peric'
 
-display_user(prezime, ime)
-display_user(last_name=prezime, first_name=ime)
+
+def display_user():
+    global ime
+    global prezime
+
+    titula = 'dipl. ing. mr. dr. prof.'
+    
+    ime = ime.upper()
+    prezime = prezime.upper()
+    print(f'Titula: {titula}\tIme: {ime}\tPrezime: {prezime}')
+
+
+
+
+
+
+
+
+display_user()
+display_user()
+print(ime, prezime)
+print(titula)
