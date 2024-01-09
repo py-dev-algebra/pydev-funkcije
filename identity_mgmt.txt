@@ -1,0 +1,27 @@
+Funkcionalnosti:
+Predefinirani Administrator sustava 
+koji može dodati nove korisnike u 
+sustav, ažurirati i brisati postojeće.
+
+Svaki korisnik ima: 
+ime, prezime, korisničko ime (UserName)
+ i Zaporku (Password)
+Zaporka (Password) mora imati minimalno
+ 10 znakova
+Korisničko ime (UserName) mora biti 
+jedinstveno
+
+Uspješna prijava na ekranu
+ ispisuje poruku: 
+ Dobro došli, {ime} {prezime}
+
+
+1. korakk prijava u sustav
+
+2. korak - menu
+    1. Ime Prezime Profil
+    2. Uredi profil
+    3. Dodaj novog korisnika
+    4. Odjavi se
+
+3. Ponovno na korak 1
