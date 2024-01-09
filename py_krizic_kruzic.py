@@ -4,6 +4,37 @@ import os
 polja_na_ploci = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 
+def provjeri_status_igre():
+    if polja_na_ploci[1] == polja_na_ploci[2] == polja_na_ploci[3]:
+        return 1
+    elif polja_na_ploci[4] == polja_na_ploci[5] == polja_na_ploci[6]:
+        return 1
+    elif polja_na_ploci[7] == polja_na_ploci[8] == polja_na_ploci[9]:
+        return 1
+    elif polja_na_ploci[1] == polja_na_ploci[4] == polja_na_ploci[7]:
+        return 1
+    elif polja_na_ploci[2] == polja_na_ploci[5] == polja_na_ploci[8]:
+        return 1
+    elif polja_na_ploci[3] == polja_na_ploci[6] == polja_na_ploci[9]:
+        return 1
+    elif polja_na_ploci[1] == polja_na_ploci[5] == polja_na_ploci[9]:
+        return 1
+    elif polja_na_ploci[3] == polja_na_ploci[5] == polja_na_ploci[7]:
+        return 1
+    elif (polja_na_ploci[1] != 1 and
+            polja_na_ploci[2] != 2 and
+            polja_na_ploci[3] != 3 and
+            polja_na_ploci[4] != 4 and
+            polja_na_ploci[5] != 5 and
+            polja_na_ploci[6] != 6 and
+            polja_na_ploci[7] != 7 and
+            polja_na_ploci[8] != 8 and
+            polja_na_ploci[9] != 9):
+        return 0
+    else:
+        return -1
+
+
 def iscrtaj_plocu():
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -65,10 +96,11 @@ while status_igre == -1:
     #     polja_na_ploci[9] = oznaka_igraca
     #endregion
 
-    
+    # provjera statusa igre
+    status_igre = provjeri_status_igre()
 
 
-
+iscrtaj_plocu()
 
 
     
