@@ -11,7 +11,6 @@ users_db = {
     }
 }
 
-    
 
 def home_screen(message = ''):
     os.system('cls' if os.name == 'nt' else 'clear')    
@@ -25,19 +24,22 @@ def home_screen(message = ''):
     print()
 
     if login(username, password):
-        menu()
+        menu(username)
     else:
         home_screen('Pogresan unos!\n')
 
 
-def menu():
+def menu(username: str):
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print('\n')
+    print(f'Dobro dosli {users_db[username]['first_name']} {users_db[username]['last_name']}')
     print('\n')
     print('1. Ime Prezime Profil')
     print('2. Uredi profil')
     print('3. Dodaj novog korisnika')
     print('4. Odjavi se\n')
 
-    izbor = input('Izaberite jedan broj iz izbornika: ')
+    izbor = int(input('Izaberite jedan broj iz izbornika: '))
     if izbor == 1:
         profile()
     elif izbor == 2:
@@ -51,7 +53,7 @@ def menu():
 
 
 def user_profile():
-    pass
+    print('PROFILE')
 
 
 def login(user_name: str, password: str) -> bool:
@@ -63,15 +65,15 @@ def login(user_name: str, password: str) -> bool:
 
 
 def logout():
-    pass
+    home_screen()
 
 
 def add_user():
-    pass
+    print('ADD USER')
 
 
 def edit_user():
-    pass
+    print('EDIT USER')
 
     
 
