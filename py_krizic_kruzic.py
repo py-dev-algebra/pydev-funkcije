@@ -101,6 +101,11 @@ while status_igre == -1:
 
 
 iscrtaj_plocu()
+if status_igre == 1:
+    print(f'Igrac {igrac} je pobijedio\n')
+else:
+    print(f'Nerijeseno\n')
+
 
 
     
