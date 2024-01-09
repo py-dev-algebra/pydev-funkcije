@@ -49,6 +49,7 @@ def iscrtaj_plocu():
     print('\n')
 
 
+
 igrac = 2
 status_igre = -1 # -1 igraj; 1 pobjeda; 0 nerjeseno
 
