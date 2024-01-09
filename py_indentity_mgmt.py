@@ -30,26 +30,25 @@ def home_screen(message = ''):
 
 
 def menu(username: str):
-    os.system('cls' if os.name == 'nt' else 'clear')
-    print('\n')
-    print(f'Dobro dosli {users_db[username]['first_name']} {users_db[username]['last_name']}')
-    print('\n')
-    print('1. Ime Prezime Profil')
-    print('2. Uredi profil')
-    print('3. Dodaj novog korisnika')
-    print('4. Odjavi se\n')
+    while True:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print('\n')
+        print(f'Dobro dosli {users_db[username]['first_name']} {users_db[username]['last_name']}')
+        print('\n')
+        print('1. Ime Prezime Profil')
+        print('2. Uredi profil')
+        print('3. Dodaj novog korisnika')
+        print('4. Odjavi se\n')
 
-    izbor = int(input('Izaberite jedan broj iz izbornika: '))
-    if izbor == 1:
-        profile()
-    elif izbor == 2:
-        edit_user()
-    elif izbor == 3:
-        add_user()
-    elif izbor == 4:
-        logout()
-    else:
-        print('Pogresan unos')
+        izbor = int(input('Izaberite jedan broj iz izbornika: '))
+        if izbor == 1:
+            profile()
+        elif izbor == 2:
+            edit_user()
+        elif izbor == 3:
+            add_user()
+        elif izbor == 4:
+            logout()
 
 
 def user_profile():
@@ -68,8 +67,23 @@ def logout():
     home_screen()
 
 
+# def add_user():
+#     print('ADD USER')
+
+
 def add_user():
-    print('ADD USER')
+    global users_db
+
+    key = input('Upisite username korisnika: ')
+    name = input('Upisite ime korisnika: ')
+    surname = input('Upisite prezime korisnika: ')
+    password = input('Upisite lozinku korisnika: ')
+    
+    users_db[key] = {
+        'first_name' : name,
+        'last_name' : surname,
+        'password' : password
+    }
 
 
 def edit_user():
