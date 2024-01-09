@@ -17,35 +17,58 @@ def iscrtaj_plocu():
     print(f'\t {polja_na_ploci[7]} | {polja_na_ploci[8]} | {polja_na_ploci[9]}')
     print('\n')
 
-igrac = 1
+
+igrac = 2
 status_igre = -1 # -1 igraj; 1 pobjeda; 0 nerjeseno
+
 while status_igre == -1:
     iscrtaj_plocu()
+    if igrac == 1:
+        igrac += 1
+    else:
+        igrac -= 1
+
 
     print(f'Igrac {igrac}')
-    izabrano_polje = int(input('Unesite broj polja na ploci: '))
+    while True:
+        izabrano_polje = int(input('Unesite broj polja na ploci: '))
+        if izabrano_polje in list(range(1, 10)):
+            break
 
     if igrac == 1:
         oznaka_igraca = 'X'
     else:
         oznaka_igraca = 'O'
 
-    if izabrano_polje == 1:
-        polja_na_ploci[1] = oznaka_igraca
-    elif izabrano_polje == 2:
-        polja_na_ploci[2] = oznaka_igraca
-    elif izabrano_polje == 3:
-        polja_na_ploci[3] = oznaka_igraca
-    elif izabrano_polje == 4:
-        polja_na_ploci[4] = oznaka_igraca
-    elif izabrano_polje == 5:
-        polja_na_ploci[5] = oznaka_igraca
-    elif izabrano_polje == 6:
-        polja_na_ploci[6] = oznaka_igraca
-    elif izabrano_polje == 7:
-        polja_na_ploci[7] = oznaka_igraca
-    elif izabrano_polje == 8:
-        polja_na_ploci[8] = oznaka_igraca
-    elif izabrano_polje == 9:
-        polja_na_ploci[9] = oznaka_igraca
+    for number in polja_na_ploci:
+        if izabrano_polje == number and polja_na_ploci[number] == number:
+            polja_na_ploci[number] = oznaka_igraca
 
+    #region DUZI NACIN
+    # if izabrano_polje == 1 and polja_na_ploci[1] == 1:
+    #     polja_na_ploci[1] = oznaka_igraca
+    # elif izabrano_polje == 2 and polja_na_ploci[2] == 2:
+    #     polja_na_ploci[2] = oznaka_igraca
+    # elif izabrano_polje == 3 and polja_na_ploci[3] == 3:
+    #     polja_na_ploci[3] = oznaka_igraca
+    # elif izabrano_polje == 4 and polja_na_ploci[4] == 4:
+    #     polja_na_ploci[4] = oznaka_igraca
+    # elif izabrano_polje == 5 and polja_na_ploci[5] == 5:
+    #     polja_na_ploci[5] = oznaka_igraca
+    # elif izabrano_polje == 6 and polja_na_ploci[6] == 6:
+    #     polja_na_ploci[6] = oznaka_igraca
+    # elif izabrano_polje == 7 and polja_na_ploci[7] == 7:
+    #     polja_na_ploci[7] = oznaka_igraca
+    # elif izabrano_polje == 8 and polja_na_ploci[8] == 8:
+    #     polja_na_ploci[8] = oznaka_igraca
+    # elif izabrano_polje == 9 and polja_na_ploci[9] == 9:
+    #     polja_na_ploci[9] = oznaka_igraca
+    #endregion
+
+    
+
+
+
+
+
+    
