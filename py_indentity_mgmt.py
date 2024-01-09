@@ -67,21 +67,17 @@ def logout():
     home_screen()
 
 
-# def add_user():
-#     print('ADD USER')
-
-
 def add_user():
     global users_db
 
-    key = input('Upisite username korisnika: ')
-    name = input('Upisite ime korisnika: ')
-    surname = input('Upisite prezime korisnika: ')
+    username = input('Upisite username korisnika: ')
+    first_name = input('Upisite ime korisnika: ')
+    last_name = input('Upisite prezime korisnika: ')
     password = input('Upisite lozinku korisnika: ')
     
-    users_db[key] = {
-        'first_name' : name,
-        'last_name' : surname,
+    users_db[username] = {
+        'first_name' : first_name,
+        'last_name' : last_name,
         'password' : password
     }
 
